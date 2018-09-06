@@ -20,10 +20,10 @@ division:
 loop:	
 
 	addi $sp, $sp, -4 # decrease stack pointer
-	sw $ra, 0($sp) #save return adress
+	sw $ra, 0($sp) #save return address
 	sub $s0, $s0, $s1 #a = a-b
 	jal division
-	lw $ra, 0($sp) #load return adress
+	lw $ra, 0($sp) #load return address
 	addi $sp, $sp, 4 #increase stack pointer
 	addi $v0,$v0,1 #result = result + 1
  	jr $ra
