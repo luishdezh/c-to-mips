@@ -5,35 +5,27 @@
 .text
 
 Main:
-	addiu $s0,$zero, 1821
-	addiu $s1,$zero, 31
+	addiu $s0,$zero, 10 # a = 10
+	addiu $s1,$zero, 4 # b = 4
 	jal division
 	j exit
 
 division:
 	
-	slt $t0,$s0,$s1
+	slt $t0,$s0,$s1 # if a > b jump to loop
 	beq $t0,$zero, loop
-	addiu $v0,$zero, 0
+	addiu $v0,$zero, 0 # result = 0
 	jr $ra
 	
 loop:	
 
-	addi $sp, $sp, -8 # decrease stack pointer
-	sw $ra, 4($sp) #save return adress
-	sw $s0, 0($sp) #save a
-	sub $s0, $s0, $s1 
+	addi $sp, $sp, -4 # decrease stack pointer
+	sw $ra, 0($sp) #save return adress
+	sub $s0, $s0, $s1 #a = a-b
 	jal division
-	lw $s0, 0($sp)
-	lw $ra, 4($sp)
-	addi $sp, $sp, 8
-	addi $v0,$v0,1
+	lw $ra, 0($sp) #load return adress
+	addi $sp, $sp, 4 #increase stack pointer
+	addi $v0,$v0,1 #result = result + 1
  	jr $ra
 	
-exit:
-
-
-	
-	
-	
-	
+exit:	
