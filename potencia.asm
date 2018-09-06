@@ -2,8 +2,6 @@
 # Date: Sep 06, 2018
 # Description: potencia;
 
-.data
-
 .text
 
 main:	
