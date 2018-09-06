@@ -12,16 +12,16 @@
 	addiu $s2,$zero, 3 # Registro s2 se guarda con un tres
 	addiu $s3,$zero, 0 # Registro s3 se guarda con un cero
 	
-	addiu $a1,$zero, 1 
-	addiu $a2,$zero, 2 
-	addiu $a3,$zero, 3 
+	addiu $a1,$zero, 1 #Opción de suma
+	addiu $a2,$zero, 2 #Opción de resta
+	addiu $a3,$zero, 3 #Opción de multiplicacion
 	
-	beq $s0,$a1, suma
-	beq $s0,$a2, resta
-	beq $s0,$a3, multiplica
+	beq $s0,$a1, suma #Si el registro 0 es 1 saltar a suma
+	beq $s0,$a2, resta #Si el registro 0 es 2 saltar a resta
+	beq $s0,$a3, multiplica #Si el registro 0 es 3 saltar a multiplica
 	
 and:
-	and $s3, $s1,$s2
+	and $s3, $s1,$s2 
 	j exit
 suma:
 	add $s3, $s1,$s2
