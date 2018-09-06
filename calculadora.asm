@@ -30,7 +30,7 @@ resta:
 	sub $s3, $s1,$s2
 	j exit
 multiplica:
-	mul $s3, $s1,$s2
-
+	mult $s1,$s2
+	mflo $s3
 exit:	
 	
