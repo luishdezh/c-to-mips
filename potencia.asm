@@ -26,7 +26,8 @@ loop:
 	jal potencia
 	lw $ra, 0($sp) #load return address
 	addi $sp, $sp, 4 #increase stack pointer
-	mul $v0, $s0, $v0 # result = result x m
+	mult $v0, $s0 # result = result x m
+	mflo $v0
  	jr $ra
  	
 exit: 
