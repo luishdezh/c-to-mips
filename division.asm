@@ -27,5 +27,4 @@ loop:
 	addi $sp, $sp, 4 #increase stack pointer
 	addi $v0,$v0,1 #result = result + 1
  	jr $ra
-	
 exit:	
