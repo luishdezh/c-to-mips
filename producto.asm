@@ -8,10 +8,8 @@
 	Vector_2: .word -1 2 -3 4 -5 6 -7 8 -9  # Array2 in Memory
 	
 .text
-
 	addiu $t0, $zero, 0 # i
 	addiu $s0, $zero, 0 # result
-
 loop:
 
 	lw $t1,Vector_1($t0) # Cargar en t1 el valor del arreglor 1 en la posicion [i]
